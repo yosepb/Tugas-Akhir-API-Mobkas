@@ -4,9 +4,14 @@ const mongoose = require("mongoose");
 exports.ProdukModels = mongoose.model(
   "Produk",
   new mongoose.Schema({
-    name: { type: String, required: true },
-    price: { type: Number, default: 0 },
-    stock: { type: Number, default: 0 },
-    location: { type: String, default: "" },
+    foto: { type: String, default:"", required: true },
+    nama: { type: String, default:"", required: true },
+    kilometer: { type: Number, default:0, required: true },
+    tahun: { type: Number, default:0, required: true },
+    transisi: { type: String, default:"", required: true},
+    plat_nomor: { type: String, default:"" },
+    bahan_bakar: { type: String, default:"" },
+    stnk: { type: String, default:"" },
+    status: { type: String, default:"" },
   })
 );

@@ -1,7 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const { ProductModel } = require("../models/ProdukModels");
-// const IsAuthenticated = require("../middlewares/IsAuthenticated");
 
 const app = express();
 
