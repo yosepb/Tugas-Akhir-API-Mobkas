@@ -8,7 +8,7 @@ exports.ProdukModels = mongoose.model(
     nama: { type: String, default:"", required: true },
     kilometer: { type: Number, default:0, required: true },
     tahun: { type: Number, default:0, required: true },
-    transisi: { type: String, default:"manual", required: true},
+    transmisi: { type: String, default:"manual", required: true},
     plat_nomor: { type: String, default:"", maxLength:10 },
     bahan_bakar: { type: String, default:"Bensin" },
     stnk: { type: String, default:"" }
