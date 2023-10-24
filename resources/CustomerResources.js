@@ -3,8 +3,12 @@ const { CustomerModels } = require("../models/CustomerModels");
 const app = express();
 
 app.post("/", async (req, res) => {
-  await CustomerModels.create(req.body);
-  return res.status(200).json(req.body);
+  try {
+    const newCustomer = await CustomerModels.create(req.body);
+    return res.status(201).json(newCustomer);
+  } catch (error) {
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
 });
 
 app.get("/", async (req, res) => {

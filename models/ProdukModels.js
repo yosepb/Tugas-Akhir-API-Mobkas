@@ -17,5 +17,8 @@ exports.ProdukModels = mongoose.model(
     bahan_bakar: { type: String, default: "Bensin" },
     stnk: { type: String, default: "" },
     status: { type: String, default: "Tersedia" },
+    warna: { type: String, default: "", required: true },
+    lokasi: { type: String, default: "", required: true },
+    harga: { type: Number, default: 0, required: true },
   })
 );
