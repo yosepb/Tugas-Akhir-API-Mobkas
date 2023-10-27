@@ -12,7 +12,9 @@ app.use(express.json());
 
 // Middleware to enable CORS
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
+  // res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
+  // res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173/users");
+  res.setHeader("Access-Control-Allow-Origin", "*");
   // You can also use '*' to allow requests from any origin, but it's less secure:
   // res.setHeader('Access-Control-Allow-Origin', '*');
 
