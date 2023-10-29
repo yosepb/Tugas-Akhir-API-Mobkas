@@ -98,4 +98,24 @@ app.delete("/:id", async (req, res) => {
   }
 });
 
+app.put("/:id/dipesan", async (req, res) => {
+  const dipesan = await ProdukModels.findOneAndUpdate(
+    { _id: req.params.id },
+    { status: "Dipesan" },
+    { new: true }
+  );
+
+  return res.status(200).json(dipesan);
+});
+
+app.put("/:id/terjual", async (req, res) => {
+  const terjual = await ProdukModels.findOneAndUpdate(
+    { _id: req.params.id },
+    { status: "Terjual" },
+    { new: true }
+  );
+
+  return res.status(200).json(terjual);
+});
+
 module.exports = app;

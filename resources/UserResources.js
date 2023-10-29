@@ -2,7 +2,13 @@ const express = require("express");
 const { UserModels } = require("../models/UserModels");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const IsAuthenticated = require("../middleware/IsAuthenticated");
 const app = express();
+
+app.get("/check-token", [IsAuthenticated], async (req, res) => {
+  // const token = req.body.token;
+  res.status(200).json({ detail: "TES." });
+});
 
 app.post("/signup", async (req, res) => {
   const oldUser = await UserModels.findOne({ email: req.body.email });
@@ -41,7 +47,7 @@ app.post("/signin", async (req, res) => {
       email: user.email,
     },
     process.env.TOKEN_KEY,
-    { expiresIn: "1h" }
+    { expiresIn: "12h" }
   );
 
   return res.status(200).json({ token });

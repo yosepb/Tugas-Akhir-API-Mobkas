@@ -20,7 +20,10 @@ app.use((req, res, next) => {
 
   // Other CORS headers you may need to set depending on your requirements
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Content-Type, x-access-token, Authorization"
+  );
 
   // Pass control to the next middleware
   next();
